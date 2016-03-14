@@ -1,0 +1,14 @@
+database:
+  image: mysql:5.7
+  container_name: unanimous_database
+  environment:
+    - MYSQL_DATABASE=unanimous
+    - MYSQL_USER=platform
+    - MYSQL_PASSWORD=abc123
+    - MYSQL_ROOT_PASSWORD=abc123
+    - TZ=America/Los_Angeles
+  volumes:
+    - /etc/localtime:/etc/localtime
+#   - data:/var/lib/mysql
+  ports:
+    - "3306:3306"
